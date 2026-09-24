@@ -12,6 +12,11 @@ public class Main {
        catalogo.add(new Episodio("Diseño 3D - Intro", 45));
        catalogo.add(new Episodio("animacion", 60));
        catalogo.add(new Episodio("texturas", 50));
+       catalogo.add(new Episodio("Episodio 1",50));
+       catalogo.add(new Episodio("Episodio 2",50));
+       catalogo.add(new Episodio("Episodio 3",50));
+       catalogo.add(new Episodio("Episodio 4",50));
+       catalogo.add(new Episodio("Episodio 5",50));
 
        long inicio = System.currentTimeMillis();
 
