@@ -8,7 +8,7 @@ public class MonitorDelCatalogo {
     public static void main(String[] args) {
 
         String[][] contenidos = {
-                {"Series", "127.0.0.1"},
+                {"Series", "127.0.0.x"},
                 {"Peliculas", "127.0.0.1"},
                 {"Documentales", "127.0.0.1"},
                 {"Anime", "192.168.999.999"},
