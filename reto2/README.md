@@ -342,4 +342,8 @@ README.md                    → este documento
 
 ## 🔗 Enlace
 
+<<<<<<< HEAD
 GitHub: *(tu repositorio)*https://github.com/marcelocoronado1509-oss/psp_udit-/tree/main/reto2
+=======
+GitHub: *(tu repositorio)*https://github.com/marcelocoronado1509-oss/psp
+>>>>>>> d97efac (Readme)

@@ -1,8 +1,5 @@
 package org.example;
-
-
 import java.io.IOException;
-
 public class PipelinedeAuditoria {
 
     public static void main(String[] args) {
