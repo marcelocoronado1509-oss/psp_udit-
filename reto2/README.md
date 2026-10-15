@@ -102,15 +102,15 @@ Dar el salto de **gestionar un proceso tras otro** (Reto 1) a **coordinar varios
 
 | Componente / concepto | Para qué se usa en esta app | Con mis palabras |
 |---|---|---|
-| `ProcessBuilder` | Prepara la orden que se enviará al sistema operativo (ping, notepad, calc) | | manda la orden al sistema
-| `start()` | Lanza de verdad el proceso y **devuelve el control enseguida**, sin esperar | | empieza el proceso 
-| `Process` | Objeto con el que controlo cada proceso ya en marcha | | controla todo lo que esta en marcha
-| `waitFor()` | Bloquea mi programa hasta que ese proceso termina y devuelve su código de salida | | espera para que los procesos salgan al mismo tiempo
-| Código de salida (`int`) | Dice cómo terminó el proceso: `0` = éxito, distinto de `0` = fallo | | dice como termina
-| `&&` (AND) | Se cumple solo si **las dos** condiciones son verdaderas | | significa Y
-| `\|\|` (OR) | Se cumple si **al menos una** condición es verdadera | |siginifa o
-| `try/catch` | Captura errores que Java no puede evitar (el SO no encuentra el programa, etc.) | | por si encuentra un error se pueda ejecutar igual con una solucion
-| `InterruptedException` | Excepción que obliga a gestionar `waitFor()` por si el hilo es interrumpido | | obliga a interrumpir
+| `ProcessBuilder` | Prepara la orden que se enviará al sistema operativo (ping, notepad, calc) | manda la orden al sistema| 
+| `start()` | Lanza de verdad el proceso y **devuelve el control enseguida**, sin esperar | empieza el proceso | 
+| `Process` | Objeto con el que controlo cada proceso ya en marcha |  controla todo lo que esta en marcha|
+| `waitFor()` | Bloquea mi programa hasta que ese proceso termina y devuelve su código de salida |espera para que los procesos salgan al mismo tiempo | 
+| Código de salida (`int`) | Dice cómo terminó el proceso: `0` = éxito, distinto de `0` = fallo | dice como termina| 
+| `&&` (AND) | Se cumple solo si **las dos** condiciones son verdaderas |  significa Y|
+| `\|\|` (OR) | Se cumple si **al menos una** condición es verdadera | siginifa o|
+| `try/catch` | Captura errores que Java no puede evitar (el SO no encuentra el programa, etc.) |por si encuentra un error se pueda ejecutar igual con una solucion | 
+| `InterruptedException` | Excepción que obliga a gestionar `waitFor()` por si el hilo es interrumpido |obliga a interrumpir | 
 
 **¿Cómo se llaman mis dos objetos `Process` y qué lanza cada uno?**
 *(p1 y p2 y uno lanza 0 y el otro 1)*
@@ -182,9 +182,8 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 | Qué intentaba | Qué pasó realmente | Qué hice / qué aprendí |
 |---|---|---|
 | *(ejemplo)* Que los dos pings corrieran a la vez | El programa tardaba el doble de lo esperado | Me di cuenta de que había puesto un `waitFor()` entre los dos `start()` y... | 
-| | | |  abrir la calculadora o el bloc de notas
-| | | |  se abrieron
-| | | | a abrir el bloc de notas o una aplicación desde intelij
+|abrir la calculadora o el bloc de notas |se abrieron |a abrir el bloc de notas o una aplicación desde intelij |  
+
 
 **Mi pregunta-brújula cuando me bloqueo:**
 1. ¿Qué espero que haga esta línea?
