@@ -58,29 +58,29 @@ Me pide dos procesos paralelos y compararlos y si los dos son correctos se habra
 *(escribe aquí)*
 
 **¿Qué parte del Reto 1 voy a reutilizar tal cual?**
-*(escribe aquí)*
-la creacion de los procesos
+*(la creacion de los procesos)*
+
 
 **¿Qué es nuevo respecto al Reto 1 y me da más respeto?**
-*(escribe aquí)*
-el if donde hay que comparar resultados.
+*(el if donde hay que comparar resultados.)*
+
 
 **Mi plan en 4-5 pasos, en orden:**
-1. *(escribe aquí)* crear los procesos
-2. *(escribe aquí)*crear las variables con el waitfor
-3. *(escribe aquí)*comparar el resultado de los procesos
-4. *(escribe aquí)*mostrarlo por pantalla abrir lo correspondiente y terminar la ejecucion
+1. *(crear los procesos)* 
+2. *(crear las variables con el waitfor)*
+3. *(comparar el resultado de los procesos)*
+4. *(mostrarlo por pantalla abrir lo correspondiente y terminar la ejecucion)*
 
 **Predicciones** *(comprueba al final si acertaste)* acerte
 
 | Escenario | ¿Qué código de salida espero en cada ping? | ¿Qué aplicación se abre? |
 |---|---|---| 
-| Los dos pings a `127.0.0.1` | *(escribe aquí)* | *(escribe aquí)* |0 y 0
-| Un ping válido y otro a una dirección inexistente | *(escribe aquí)* | *(escribe aquí)* |0 y 1
-| Los dos pings a direcciones inexistentes | *(escribe aquí)* | *(escribe aquí)* |1 y 1 
+| Los dos pings a `127.0.0.1` | *(0,0)* | *(calculadora)* |
+| Un ping válido y otro a una dirección inexistente | *(0,1)* | *(bloc de notas)* |
+| Los dos pings a direcciones inexistentes | *(1,1)* | *(bloc de notas)* |
 
 **Predicción de tiempo:** si cada ping tarda unos 3 segundos, ¿cuánto tardará mi programa en total si los lanzo en paralelo? ¿Y si los lanzara uno detrás de otro?
-*(escribe aquí)*3 y si es uno detras de otro 6
+*(3 y si es uno detras de otro 6)*
 
 ---
 
@@ -113,7 +113,7 @@ Dar el salto de **gestionar un proceso tras otro** (Reto 1) a **coordinar varios
 | `InterruptedException` | Excepción que obliga a gestionar `waitFor()` por si el hilo es interrumpido | | obliga a interrumpir
 
 **¿Cómo se llaman mis dos objetos `Process` y qué lanza cada uno?**
-*(escribe aquí)* p1 y p2 y uno lanza 0 y el otro 1
+*(p1 y p2 y uno lanza 0 y el otro 1)*
 
 ---
 
@@ -142,7 +142,10 @@ t=3s   waitFor(A) ✔  waitFor(B) ✔
 
 ```java
 // (pega aquí tus llamadas a start() y waitFor() en el orden en que aparecen)
-```
+``` Process p1 = new ProcessBuilder("ping","-n", "1" , "127.0.0.1").start();
+            Process p2 = new ProcessBuilder("ping", "-n", "2", "8.8.8.8" ).start();
+            int codigo1 = p1.waitFor();
+            int codigo2 = p2.waitFor();
 
 ---
 
@@ -198,7 +201,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **¿Qué líneas exactas garantizan que los dos pings se ejecutan a la vez? ¿Qué ocurriría físicamente si pusieras el primer `waitFor()` justo antes de lanzar el segundo `start()`?** 
 
-*(escribe aquí)* 10-11-12-13
+*(10-11-12-13)* 
 
 *Pistas: ¿qué hace `start()` con el hilo principal de mi programa? ¿Quién ejecuta el ping: mi programa o el sistema operativo? ¿Cuántos procesos existen en ese momento en cada caso? ¿Cuánto tardaría el programa completo?*
 
@@ -206,7 +209,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **¿Qué tipo de dato devuelve `waitFor()`? ¿Qué significa en el estándar de los sistemas operativos que ese valor sea `0` o distinto de `0`?**
 
-*(escribe aquí)* el waitfor me devuelve un int y 0 significa que la ip existe y 1 que no existe o es incorrecta
+*(el waitfor me devuelve un int y 0 significa que la ip existe y 1 que no existe o es incorrecta)* 
 
 *Pistas: piensa en "0 = todo fue bien". ¿Por qué crees que el estándar eligió precisamente el 0 para el éxito y deja los demás números libres? ¿Qué información extra pueden aportar los valores distintos de 0? ¿Es lo mismo "el ping falló" que "el programa ping no pudo ejecutarse"?*
 
@@ -215,10 +218,9 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 **Escribe aquí la condición `if` exacta que has programado. Explica por qué has utilizado `&&` o `||` para decidir si abrir el Bloc de Notas o la Calculadora.**
 
 ```java
-  if (codigo1 == 0 && codigo2 == 0) he usado este codigo porque a continuacion he puesto que si se cumple esa condicion se abra la app correspondiente mientras que si no se cumple se abra la otra.
 ```
 
-*(explica aquí tu razonamiento)*
+*(if (codigo1 == 0 && codigo2 == 0) he usado este codigo porque a continuacion he puesto que si se cumple esa condicion se abra la app correspondiente mientras que si no se cumple se abra la otra.)*
 
 *Pistas: ¿qué debe pasar para que se abra cada aplicación? Si usaras el operador contrario, ¿en qué fila de mi tabla de verdad cambiaría el resultado? ¿Qué pasaría si uno de los dos pings falla y el otro no?*
 
